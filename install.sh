@@ -13,8 +13,13 @@ sudo apt-get install -y docker-engine
 sudo usermod -aG docker $USER
 # docker run hello-world
 
+# install docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
 # launch vagrant box
 vagrant up
 
 # install docker containers
-docker compose
+docker-compose up -d
+docker-compose ps
