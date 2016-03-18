@@ -1,24 +1,15 @@
 nginx:
   build: docker/nginx
   links:
-    - phpfpm
+    - php
   ports:
     - "80:80"
     - "443:443"
   volumes:
-    - config/nginx:/etc/nginx
-    - log/nginx:/var/log/nginx
-    - data/nginx:/home/http
-phpfpm:
+    - ./config/nginx/:/etc/nginx
+    - ./log/nginx/:/var/log/nginx
+    - ./data/nginx/:/home/http
+php:
   build: docker/phpfpm
-  links:
-    - memcached
   ports:
     - "9000:9000"
-  volumes:
-    - data/php:/home/http
-memcached:
-  build: docker/memcached
-  ports:
-    - "11211:11211"
- 

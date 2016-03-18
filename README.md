@@ -7,6 +7,8 @@ A starter with vagrant to virtualize a Debian Jessie OS &amp; docker containers 
 ## Installation
 
 ```
+git clone https://github.com/7s4r/micro-service-starter.git
+cd micro-service-starter
 ./install.sh
 ```
 
