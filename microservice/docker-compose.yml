@@ -1,0 +1,29 @@
+app:
+  build: containers/code
+  volumes:
+    - ./src/symfony:/var/www/symfony
+  tty: true
+nginx:
+  build: containers/nginx
+  links:
+    - php
+  ports:
+    - 80:80
+    - 443:443
+  volumes_from:
+    - app
+php:
+  build: containers/php-fpm
+  ports:
+    - 9000:9000
+  links:
+    - db    
+db:
+  image: mysql
+  ports:
+    - 3306:3306
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: symfony
+    MYSQL_USER: root
+    MYSQL_PASSWORD: root    

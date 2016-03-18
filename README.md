@@ -13,9 +13,11 @@ cd micro-service-starter
 ```
 
 ## Start
-
+In the project root directory run the following command:
 ```
 vagrant up
+vagrant ssh
+cd ~/microservice
 docker-compose up -d
 ```
 
