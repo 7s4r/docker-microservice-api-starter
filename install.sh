@@ -20,9 +20,10 @@ sudo usermod -aG docker $USER
 # docker run hello-world
 
 # install Docker-compose
-sudo apt-get install python-pip
+sudo apt-get install -y python-pip
 sudo pip install docker-compose
 
 # install Docker containers
+cd ~/microservice
 docker-compose up -d
 docker-compose ps
