@@ -10,7 +10,7 @@ vagrant ssh
 
 # install & run Docker
 sudo apt-get update
-sudo apt-get install -y curl vim
+sudo apt-get install -y curl
 
 # get the latest Docker package
 curl -fsSL https://get.docker.com/ | sh
@@ -22,6 +22,12 @@ sudo usermod -aG docker $USER
 # install Docker-compose
 sudo apt-get install -y python-pip
 sudo pip install docker-compose
+
+# install Docker-machine
+sudo -i
+curl -L https://github.com/docker/machine/releases/download/v0.6.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine
+chmod +x /usr/local/bin/docker-machine
+exit
 
 # install Docker containers
 cd ~/microservice

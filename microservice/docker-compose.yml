@@ -1,7 +1,7 @@
 app:
   build: containers/symfony
   volumes:
-    - ./symfony/code:/var/www
+    - ./containers/symfony/code:/var/www
   tty: true
 nginx:
   build: containers/nginx
@@ -16,11 +16,5 @@ php:
   build: containers/php-fpm
   ports:
     - 9000:9000
-  links:
-    - db
   volumes_from:
     - app    
-db:
-  image: mongo
-  ports:
-    - 27017:27017
