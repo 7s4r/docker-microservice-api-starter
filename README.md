@@ -1,5 +1,5 @@
-# micro-service-starter
-A starter with vagrant to virtualize a Debian Jessie OS &amp; docker containers to create a microservice
+# docker-symfony-microservice-starter
+A starter with Vagrant to virtualize a Debian Jessie OS &amp; Docker containers to create a RESTful Microservice API with Nginx, PHP-fpm & Symfony 
 
 ## Requirements
 [VirtualBox](https://www.virtualbox.org/), [Vagrant](https://www.vagrantup.com/), [Docker](https://www.docker.io/) and [Compose](http://docs.docker.com/compose/install/)
