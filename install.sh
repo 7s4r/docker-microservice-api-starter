@@ -4,21 +4,25 @@
 sudo apt-get install -y vagrant
 vagrant box add debian/jessie64 https://dl.dropboxusercontent.com/u/3523744/boxes/debian-8.1-amd64-lxc-puppet/debian-8.1-lxc-puppet.box
 
-# launch vagrant box
+# launch Vagrant box
 vagrant up
 vagrant ssh
 
-# install & run docker
+# install & run Docker
 sudo apt-get update
 sudo apt-get install -y curl vim
+
+# get the latest Docker package
 curl -fsSL https://get.docker.com/ | sh
 sudo usermod -aG docker $USER
+
+# verify if Docker is installed correctly
 # docker run hello-world
 
-# install docker-compose
+# install Docker-compose
 sudo apt-get install python-pip
 sudo pip install docker-compose
 
-# install docker containers
+# install Docker containers
 docker-compose up -d
 docker-compose ps
