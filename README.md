@@ -7,8 +7,8 @@ A starter with Vagrant to virtualize a Debian Jessie OS &amp; Docker containers 
 ## Installation
 
 ```
-git clone https://github.com/7s4r/micro-service-starter.git
-cd micro-service-starter
+git clone https://github.com/7s4r/docker-symfony-microservice-starter.git
+cd docker-symfony-micro-service-starter
 ./install.sh
 ```
 

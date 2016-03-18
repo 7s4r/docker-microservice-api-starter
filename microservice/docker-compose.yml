@@ -1,7 +1,7 @@
 app:
-  build: containers/code
+  build: containers/symfony
   volumes:
-    - ./src/symfony:/var/www/symfony
+    - ./symfony/code:/var/www
   tty: true
 nginx:
   build: containers/nginx
@@ -17,13 +17,10 @@ php:
   ports:
     - 9000:9000
   links:
-    - db    
+    - db
+  volumes_from:
+    - app    
 db:
-  image: mysql
+  image: mongo
   ports:
-    - 3306:3306
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: symfony
-    MYSQL_USER: root
-    MYSQL_PASSWORD: root    
+    - 27017:27017
