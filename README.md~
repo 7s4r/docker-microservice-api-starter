@@ -22,6 +22,5 @@ docker-compose up -d
 ```
 
 You can now access to it at this url:
-```
+
 http://symfony.dev
-```
