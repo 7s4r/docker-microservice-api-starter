@@ -21,7 +21,12 @@ cd ~/microservice
 docker-compose up -d
 ```
 
+add url to your hosts:
+```
+sudo echo "192.168.33.10 microservice.dev" >> /etc/hosts
+```
+
 You can now access to it at this url:
 ```
-http://symfony.dev
+http://microservice.dev
 ```
