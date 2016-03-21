@@ -1,8 +1,7 @@
 app:
-  build: containers/symfony
+  build: containers/api
   volumes:
-    - ./containers/symfony/code:/var/www
-  tty: true
+    - /var/www
 nginx:
   build: containers/nginx
   links:
@@ -17,4 +16,4 @@ php:
   ports:
     - 9000:9000
   volumes_from:
-    - app    
+    - app
