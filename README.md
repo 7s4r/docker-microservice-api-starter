@@ -1,5 +1,5 @@
 # docker-symfony-microservice-starter
-A starter with Vagrant to virtualize a Debian OS &amp; Docker containers to create a RESTful Microservice API with Nginx, PHP-fpm, Symfony & Redis
+A starter with Vagrant to virtualize a Debian OS &amp; Docker containers to create a RESTful Microservice API with Nginx, PHP-fpm, API Platform & Redis
 
 ## Requirements
 [VirtualBox](https://www.virtualbox.org/), [Vagrant](https://www.vagrantup.com/), [Docker](https://www.docker.io/) and [Compose](http://docs.docker.com/compose/install/)
@@ -21,7 +21,7 @@ cd ~/microservice
 docker-compose up -d
 ```
 
-add url to your hosts:
+add local domain name to your hosts:
 ```
 sudo echo "192.168.33.10 microservice.dev" >> /etc/hosts
 ```

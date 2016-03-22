@@ -1,5 +1,7 @@
 app:
   build: containers/api
+  links:
+    - redis
   volumes:
     - /var/www
 nginx:
@@ -13,7 +15,11 @@ nginx:
     - app
 php:
   build: containers/php-fpm
+  links:
+    - redis
   ports:
     - 9000:9000
   volumes_from:
     - app
+redis:
+  image: redis:3.2
