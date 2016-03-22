@@ -1,11 +1,13 @@
 FROM debian:jessie
 
-RUN apt-get update && apt-get install -y curl php5-cli php5-json php5-intl php5-curl
+RUN apt-get update && apt-get install -y git curl php5-cli php5-json php5-intl php5-curl
 
-RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php \
+  && mv composer.phar /usr/local/bin/composer
 
-RUN composer create-project api-platform/api-platform /var/www
+# install & configure symfony
+RUN git clone https://github.com/symfony/symfony.git /var/www \
+  && cd /var/www && composer install
 
 # ADD entrypoint.sh /entrypoint.sh
 

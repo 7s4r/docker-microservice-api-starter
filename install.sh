@@ -4,8 +4,10 @@
 sudo apt-get install -y vagrant
 vagrant box add debian/jessie64 https://dl.dropboxusercontent.com/u/3523744/boxes/debian-8.1-amd64-lxc-puppet/debian-8.1-lxc-puppet.box
 
-# add microservice url to host
-sudo echo "192.168.33.10 microservice.dev" >> /etc/hosts
+# add microservice domain name url to hosts
+sudo -i
+echo "192.168.33.10 microservice.dev" >> /etc/hosts
+exit
 
 # launch Vagrant box
 vagrant up
