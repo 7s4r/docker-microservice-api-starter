@@ -4,12 +4,10 @@ A starter with Vagrant to virtualize a Debian OS &amp; Docker containers to crea
 ## Requirements
 [VirtualBox](https://www.virtualbox.org/), [Vagrant](https://www.vagrantup.com/)
 
-## Installation
-
+## Map your local domain name to vagrant ip address
+Add this line to your hosts file:
 ```
-git clone https://github.com/7s4r/docker-symfony-microservice-starter.git
-cd docker-symfony-micro-service-starter
-./install.sh
+192.168.33.10 microservice.dev
 ```
 
 ## Start
