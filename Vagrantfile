@@ -115,4 +115,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+  
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update
+    sudo apt-get install -y curl
+    curl -fsSL https://get.docker.com/ | sh
+    sudo usermod -aG docker vagrant
+    sudo apt-get install -y python-pip
+    sudo pip install docker-compose
+  SHELL
 end
