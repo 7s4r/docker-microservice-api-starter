@@ -1,9 +1,10 @@
 app:
   build: containers/api
   links:
-    - redis
+    - db
   volumes:
-    - /var/www
+    - ./containers/api/code:/var/www
+  tty: true
 nginx:
   build: containers/nginx
   links:
@@ -16,10 +17,10 @@ nginx:
 php:
   build: containers/php-fpm
   links:
-    - redis
+    - db
   ports:
     - 9000:9000
   volumes_from:
     - app
-redis:
-  image: redis:3.2
+db:
+  image: redis
