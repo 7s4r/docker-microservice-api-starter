@@ -1,5 +1,5 @@
 # docker-microservice-api-starter
-A starter with Vagrant to virtualize a Debian OS &amp; Docker containers to create a RESTful Microservice API with Nginx, PHP-fpm, API Platform & Redis
+A starter with Vagrant to virtualize CoreOS &amp; Docker containers to create a RESTful Microservice API with Nginx, Node.js, Express & MongoDB
 
 ## Requirements
 [VirtualBox](https://www.virtualbox.org/), [Vagrant](https://www.vagrantup.com/)
