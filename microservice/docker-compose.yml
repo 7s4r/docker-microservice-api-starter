@@ -2,18 +2,13 @@ app:
   build: containers/api
   links:
     - db
-  volumes:
-    - ./containers/api/code:/var/www
-  tty: true
+
 nginx:
   build: containers/nginx
-  links:
-    - php
   ports:
     - 80:80
     - 443:443
-  volumes_from:
-    - app
+
 php:
   build: containers/php-fpm
   links:
@@ -22,5 +17,8 @@ php:
     - 9000:9000
   volumes_from:
     - app
+
 db:
-  image: redis
+  image: mongo
+  ports:
+    - 27017:27017
